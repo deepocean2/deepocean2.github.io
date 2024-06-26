@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="shortcut icon" type="x-icon" href="Imagenes/logo.png">
+    <meta charset="utf-8">
+    <meta name="author" content="Bruno Díaz Flores">
+    <title>Productos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="bg-fondo1">
+    <header class="bg-encabezado">
+        <h1 class="gold potition1">DEEP</h1>
+        <h1 class="wave potition1">DEEP</h1>
+        <img class="logo" src=" Imagenes/logo.png">
+        <h1 class="silver potition2">OCEAN</h1>
+        <h1 class="wave potition2">OCEAN</h1>
+    </header>
+    <header class="bg-encabezado2">
+        <h1 class="sub">Joyería</h1>
+    </header>
+    <nav class="menu">
+        <li><a class="deco" href="Productos.html">
+                <h3 class="color-black">Productos</h3>
+            </a>
+        </li>
+        <li>
+            <a class="deco" href="index.html">
+                <h3 class="color-black">Principal </h3>
+            </a>
+        </li>
+        <li><a href="Carrito.html"><img class="icon" src="Imagenes/Icon.png" alt="Carrito"></a>
+        </li>
+    </nav>
+    <section>
+        <div>
+            <h1 class="cartis"></h1>
+            <h1 class="texto">Carrito de Compras</h1>
+            <div id="cart-items" class="contenedor"></div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+                const productos = {
+                    1: { nombre: "Anillo-cangrejo", precio: 799.99, descripcion: "Anillo de oro con forma de cangrejo ermitaño, contiene un ámbar en la parte del caparazón.", imagen: "Imagenes/producto (1).jpg" },
+                    2: { nombre: "Guardapelos-Ostra", precio: 399.99, descripcion: "Guardapelos inspirado en una ostra de mar, esta hecho de plata y pulida para resaltar su hermoso brillo.", imagen: "Imagenes/producto (2).jpg" },
+                    3: { nombre: "Pulsera-Ballena", precio: 559.99, descripcion: "Pulsera con diseño de ballena, hecha de plata, de muy buena calidad, contiene lapislázuli y cuarzo en el dije.", imagen: "Imagenes/producto (3).jpg" },
+                    4: { nombre: "Collar-Tortuga", precio: 899.99, descripcion: "Collar de plata con temática de tortuga marina, cadena de 40 cm, con gemas incrustadas de zafiros.", imagen: "Imagenes/producto (4).jpg" },
+                    5: { nombre: "Pendientes-Tiburón", precio: 499.99, descripcion: "Pendientes en forma de tiburón, cada uno con 2 joyas, uno en cada ojo.", imagen: "Imagenes/producto (5).jpg" },
+                    6: { nombre: "Collar dúo-Tortugas", precio: 1599.99, descripcion: "Collar dúo de tortugas, cadena de 40 cm, dije de 6 cm, una tortuga de plata otra de oro, una con un rubí y otra con una esmeralda.", imagen: "Imagenes/producto (6).jpg" },
+                    7: { nombre: "Colgante-delfín", precio: 799.99, descripcion: "Colgante de delfín, adornado con gemas brillantes y ojos azules cautivadores. Añade un toque de elegancia marina a cualquier atuendo", imagen: "Imagenes/producto (7).jpg" },
+                    8: { nombre: "Pulsera-caballito de mar", precio: 899.99, descripcion: "Esta pulsera de caballito de mar, incrustada con gemas azules y diamantes, es una joya que captura la delicadeza y el encanto del océano.", imagen: "Imagenes/producto (8).jpg" },
+                    9: { nombre: "Aretes-estrella de mar", precio: 459.99, descripcion: "Aretes de estrella de mar, engastados con cristales brillantes y gemas azules que capturan la esencia del mar.", imagen: "Imagenes/producto (9).jpg" },
+                    10: { nombre: "Anillo-pez ángel", precio: 999.99, descripcion: "Anillo de pez ángel, una joya única incrustada con piedras preciosas y un zafiro azul como su ojo.", imagen: "Imagenes/producto (10).jpg" },
+                    11: { nombre: "Broche-Tiburón", precio: 449.99, descripcion: "Broche de tiburón con un diseño elegante, destacando por sus piedras preciosas incrustadas y su ojo de gema azul que captura la esencia del mar.", imagen: "Imagenes/producto (11).jpg" }
+                };
+
+                function updateCartDisplay() {
+                    const cartItemsDiv = document.getElementById('cart-items');
+                    const totalElement = document.getElementById('total');
+                    cartItemsDiv.innerHTML = '';
+                    let hasItems = false;
+                    let total = 0;
+
+                    for (const productId in cart) {
+                        if (cart[productId] > 0) {
+                            hasItems = true;
+                            const product = productos[productId];
+                            const itemDiv = document.createElement('div');
+                            itemDiv.classList.add('carts');
+                            itemDiv.innerHTML = `
+                                <div class="producto">
+                                    <div class="item">
+                                        <figure>
+                                            <img src="${product.imagen}" alt="${product.nombre}">
+                                        </figure>
+                                        <div class="info">
+                                            <h3>${product.nombre}</h3>
+                                            <h3>$${product.precio.toFixed(2)}</h3>
+                                            <h3>Cantidad: ${cart[productId]}</h3>
+                                            <h3>${product.descripcion}</h3>
+                                        </div>
+                                    </div>
+                                </div>       
+                            `;
+                            cartItemsDiv.appendChild(itemDiv);
+                            total += product.precio * cart[productId];
+                        }
+                    }
+                    if (!hasItems) {
+                        cartItemsDiv.innerHTML = '<h1 class = "noitem"> ¡No hay nada en el carrito!</h1>';
+                    }
+                    totalElement.textContent = `Total: $${total.toFixed(2)}`;
+                }
+
+                document.getElementById('checkout').addEventListener('click', () => {
+                    event.preventDefault();
+                    alert('Ha sido pagado');
+                    localStorage.removeItem('cart');
+                    location.reload();
+                });
+
+                updateCartDisplay();
+            });
+        </script>
+    </section>
+    <h2 class="cap" id="total">Total: $0.00</h2>
+    <div class="pago">
+        <br>
+        <form class="labeltap">
+            <h1>Información de Pago</h1>
+            <label for="payment-method">Método de Pago:</label>
+            <select class="boton" id="payment-method" name="payment-method" required>
+                <option class="o1" value="credito">Crédito</option>
+                <option class="o2" value="debito">Débito</option>
+            </select>
+            <label for="cardholder-name">Nombre del Titular:</label>
+            <input type="text" id="cardholder-name" name="cardholder-name" required>
+            <br>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="card-number">Número de Tarjeta:</label>
+            <input type="text" id="card-number" name="card-number" required>
+            <br>
+            <label for="expiry-date">Fecha de Expiración:</label>
+            <input type="text" id="expiry-date" name="expiry-date" required>
+            <br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <br>
+            <h1>Datos de Envío</h1>
+            <label for="country">País:</label>
+            <input type="text" id="country" name="country" required>
+            <br>
+            <label for="address">Dirección:</label>
+            <input type="text" id="address" name="address" required>
+            <br>
+            <label for="neighborhood">Colonia:</label>
+            <input type="text" id="neighborhood" name="neighborhood" required>
+            <br>
+            <label for="postal-code">Código Postal:</label>
+            <input type="text" id="postal-code" name="postal-code" required>
+            <br>
+            <label for="city">Ciudad:</label>
+            <input type="text" id="city" name="city" required>
+            <br>
+            <label for="state">Estado:</label>
+            <input type="text" id="state" name="state" required>
+            <br>
+            <button class="boton" type="submit" id="checkout">Pagar</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <footer class="bg-piepagina">
+        <br>
+        <strong>
+            <p class="port">CONTACTANOS:<br></p>
+        </strong>
+        <p class="port">Gmail:
+        <p class="port" style="text-decoration: underline;">deepocean.joy@gmail.com</p>
+        </p>
+        <div class="contactos">
+            <a href="https://www.instagram.com/mleo0_0?igsh=bGp5bno5MXV1dTNt"><img src="Imagenes/insta.png"
+                    class="insta"></a>
+            <a href="https://www.facebook.com/profile.php?id=61561326907434&mibextid=ZbWKwL"><img
+                    src="Imagenes/face.png" class="insta"></a>
+            <strong>
+                <p class="port"> ← Nuestras redes </p>
+            </strong>
+        </div>
+
+        <p class="port">Ó contactanos por Whatsapp a este numero telefonico:
+        <p class="port" style="text-decoration: underline;">749-110-8550</p>
+        </p>
+    </footer>
+</body>
+
+</html>

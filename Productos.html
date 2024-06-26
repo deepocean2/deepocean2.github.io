@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="shortcut icon" type="x-icon" href="Imagenes/logo.png">
+    <meta charset="utf-8">
+    <meta name="author" content="Portilla Sánchez Ulises">
+    <title>Productos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="bg-fondo">
+    <header class="bg-encabezado">
+        <h1 class="gold potition1">DEEP</h1>
+        <h1 class="wave potition1">DEEP</h1>
+        <img class="logo" src=" Imagenes/logo.png">
+        <h1 class="silver potition2">OCEAN</h1>
+        <h1 class="wave potition2">OCEAN</h1>
+    </header>
+    <header class="bg-encabezado2">
+        <h1 class="sub">Joyería</h1>
+    </header>
+
+    <nav class="menu">
+        <li><a class="deco" href="Productos.html">
+                <h3 class="color-black">Productos</h1>
+            </a>
+        </li>
+        <li>
+            <a class="deco" href="index.html">
+                <h3 class="color-black">Principal </h1>
+            </a>
+        </li>
+        <li><a href="Carrito.html"><img class="icon" src="Imagenes/Icon.png"></a>
+        </li>
+    </nav>
+    <section class="bg-fondo">
+        <!-- Productos -->
+        <h1 class="cartis"></h1>
+        <br>
+        <h1 class="texto2">Todos nuestros productos</h1>
+        <div class="container-item">
+
+            <div class="producto" data-id="1">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (1).jpg" alt="Producto 1">
+                    </figure>
+                    <div class="info">
+                        <h2>Anillo-cangrejo</h2>
+                        <p>$ 799.99</p>
+                        <button onclick="restarUno(1)">-</button>
+                        <span id="cantidad-1">0</span>
+                        <button onclick="agregarUno(1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="2">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (2).jpg" alt="Producto 2">
+                    </figure>
+                    <div class="info">
+                        <h2>Guardapelos-Ostra</h2>
+                        <p>$ 399.99</p>
+                        <button onclick="restarUno(2)">-</button>
+                        <span id="cantidad-2">0</span>
+                        <button onclick="agregarUno(2)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="3">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (3).jpg" alt="Producto 3">
+                    </figure>
+                    <div class="info">
+                        <h2>Pulsera-Ballena</h2>
+                        <p>$ 559.99</p>
+                        <button onclick="restarUno(3)">-</button>
+                        <span id="cantidad-3">0</span>
+                        <button onclick="agregarUno(3)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="4">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (4).jpg" alt="Producto 4">
+                    </figure>
+                    <div class="info">
+                        <h2>Collar-Tortuga</h2>
+                        <p>$ 899.99</p>
+                        <button onclick="restarUno(4)">-</button>
+                        <span id="cantidad-4">0</span>
+                        <button onclick="agregarUno(4)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="5">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (5).jpg" alt="Producto 5">
+                    </figure>
+                    <div class="info">
+                        <h2>Pendientes-Tiburón</h2>
+                        <p>$ 499.99</p>
+                        <button onclick="restarUno(5)">-</button>
+                        <span id="cantidad-5">0</span>
+                        <button onclick="agregarUno(5)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="6">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (6).jpg" alt="Producto 6">
+                    </figure>
+                    <div class=" info">
+                        <h2>Collar dúo-Tortugas</h2>
+                        <p>$ 1599.99</p>
+                        <button onclick="restarUno(6)">-</button>
+                        <span id="cantidad-6">0</span>
+                        <button onclick="agregarUno(6)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="7">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (7).jpg" alt="Producto 7">
+                    </figure>
+                    <div class=" info">
+                        <h2>Colgante-delfín</h2>
+                        <p>$ 799.99</p>
+                        <button onclick="restarUno(7)">-</button>
+                        <span id="cantidad-7">0</span>
+                        <button onclick="agregarUno(7)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="8">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (8).jpg" alt="Producto 8">
+                    </figure>
+                    <div class=" info">
+                        <h2>Pulsera-caballito de mar</h2>
+                        <p>$ 899.99</p>
+                        <button onclick="restarUno(8)">-</button>
+                        <span id="cantidad-8">0</span>
+                        <button onclick="agregarUno(8)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="9">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (9).jpg" alt="Producto 9">
+                    </figure>
+                    <div class=" info">
+                        <h2>Aretes-estrella de mar</h2>
+                        <p>$ 459.99</p>
+                        <button onclick="restarUno(9)">-</button>
+                        <span id="cantidad-9">0</span>
+                        <button onclick="agregarUno(9)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="10">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (10).jpg" alt="Producto 10">
+                    </figure>
+                    <div class=" info">
+                        <h2>Anillo-pez ángel</h2>
+                        <p>$ 999.99</p>
+                        <button onclick="restarUno(10)">-</button>
+                        <span id="cantidad-10">0</span>
+                        <button onclick="agregarUno(10)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-id="11">
+                <div class="item">
+                    <figure>
+                        <img src="Imagenes/producto (11).jpg" alt="Producto 11">
+                    </figure>
+                    <div class=" info">
+                        <h2>Broche-Tiburón</h2>
+                        <p>$ 449.99</p>
+                        <button onclick="restarUno(11)">-</button>
+                        <span id="cantidad-11">0</span>
+                        <button onclick="agregarUno(11)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+                function saveCart() {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                }
+
+                function updateQuantity(productId, quantity) {
+                    const cantidadElement = document.getElementById(`cantidad-${productId}`);
+                    cantidadElement.textContent = quantity;
+                }
+
+                function agregarUno(productId) {
+                    cart[productId] = (cart[productId] || 0) + 1;
+                    updateQuantity(productId, cart[productId]);
+                    saveCart();
+                }
+
+                function restarUno(productId) {
+                    if (cart[productId] > 0) {
+                        cart[productId] -= 1;
+                        updateQuantity(productId, cart[productId]);
+                        saveCart();
+                    }
+                }
+
+                for (const productId in cart) {
+                    updateQuantity(productId, cart[productId]);
+                }
+
+                window.agregarUno = agregarUno;
+                window.restarUno = restarUno;
+            });
+        </script>
+    </section>
+    <footer class="bg-piepagina">
+        <br>
+        <strong>
+            <p class="port">CONTACTANOS:<br></p>
+        </strong>
+        <p class="port">Gmail:
+        <p class="port" style="text-decoration: underline;">deepocean.joy@gmail.com</p>
+        </p>
+        <div class="contactos">
+            <a href="https://www.instagram.com/mleo0_0?igsh=bGp5bno5MXV1dTNt"><img src="Imagenes/insta.png"
+                    class="insta"></a>
+            <a href="https://www.facebook.com/profile.php?id=61561326907434&mibextid=ZbWKwL"><img
+                    src="Imagenes/face.png" class="insta"></a>
+            <strong>
+                <p class="port"> ← Nuestras redes </p>
+            </strong>
+        </div>
+
+        <p class="port">Ó contactanos por Whatsapp a este numero telefonico:
+        <p class="port" style="text-decoration: underline;">749-110-8550</p>
+        </p>
+    </footer>
+</body>
+
+</html>
